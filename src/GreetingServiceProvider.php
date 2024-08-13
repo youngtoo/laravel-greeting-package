@@ -16,7 +16,7 @@ class GreetingServiceProvider extends ServiceProvider
         });
 
         // Publish config
-        $this->mergeConfigFrom(__DIR__.'/../config/greeting.php');
+        $this->mergeConfigFrom(__DIR__.'/../config/greeting.php', 'greeting');
 
     }
 
