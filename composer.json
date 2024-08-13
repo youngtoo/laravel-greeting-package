@@ -1,0 +1,26 @@
+{
+    "name": "iantoo/laravel-greeting-package",
+    "description": "The Laravel Greeting package is a lightweight, customizable package that provided personalized greeting messages based on the time of the day.It automatically detects the current time and delivers an appropriate greeting either in Kiswahili or English. If a user is logged in, the greeting is personalized with their first name or email.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Iantoo\\LaravelGreetingPackage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ian Too",
+            "email": "ianktoo@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "iantoo\\LaravelGreetingPackage\\GreetingServiceProvider"
+            ]
+        }
+    }
+}
