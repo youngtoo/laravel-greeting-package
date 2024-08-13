@@ -22,11 +22,15 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 
 Include the package in your laravel project, publish the configuration and start personalized greetings in minutes
 
+Install the package using:
+
+`composer require  iantoo/laravel-greeting-package:dev-main`
 
 
 ### Publish the configuration file
 
 To publish the configuration file:
+
 `php artisan vendor:publish --tag=config`
 
 Todo: Include the composer install command.
