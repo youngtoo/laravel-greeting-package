@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "iantoo\\LaravelGreetingPackage\\GreetingServiceProvider"
+                "Iantoo\\GreetingPackage\\GreetingServiceProvider"
             ]
         }
     }
