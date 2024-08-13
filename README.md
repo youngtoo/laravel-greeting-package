@@ -22,11 +22,14 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 
 1. **Install the Package:**
    - Add the package to your Laravel project using Composer:
+
      ```bash
      composer require iantoo/greeting-package
      ```
+     
 
    - If you are developing the package locally, include it in your `composer.json` file under the `repositories` section:
+
      ```json
      "repositories": [
          {
@@ -38,38 +41,49 @@ The Laravel Greeting package is a lightweight, customizable package that provide
          "iantoo/greeting-package": "*"
      }
      ```
+
    - Then run:
+
      ```bash
      composer update
      ```
+
 
 ## Configuration
 
 1. **Publish Configuration (Optional):**
    - Publish the package's configuration file to your application's `config` directory:
+
      ```bash
      php artisan vendor:publish --tag=config
      ```
 
+
 2. **Publish Language Files (Optional):**
    - Publish the package's language files to your application's `resources/lang` directory:
+
      ```bash
      php artisan vendor:publish --tag=lang
      ```
 
+
 3. **Set the Application Locale (Optional):**
    - To use Kiswahili for greetings, set the application's locale to `sw` in your `.env` file or `config/app.php`:
+
      ```php
      'locale' => 'sw',
      ```
+
 
 ## Usage
 
 1. **Display a Greeting in a View:**
    - Use the `Greeting::greet()` method to display a greeting message in any Blade view:
+     
      ```blade
      {{ \Iantoo\GreetingPackage\Greeting::greet() }}
      ```
+
 
 2. **Test the Greeting via Artisan Command:**
    - Run the custom Artisan command to test the greeting output:
@@ -81,6 +95,8 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 ## Example Usage
 
 ### In a Controller:
+
+
 
 ```php
 namespace App\Http\Controllers;
@@ -98,12 +114,17 @@ class DashboardController extends Controller
 }
 ```
 
+
 ### In a Blade View:
+
+
 
 ```blade
 <!-- resources/views/dashboard.blade.php -->
 <h1>{{ $greeting }}</h1>
 ```
+
+
 
 ## Advanced Usage
 
@@ -114,5 +135,6 @@ class DashboardController extends Controller
    - Add new language files in the `resources/lang` directory under the appropriate locale code to support additional languages.
 
 ## Deployment
+
 
 - Deploy your Laravel application as usual. The package will automatically generate the appropriate greeting messages based on the user's language preference and time of day.
