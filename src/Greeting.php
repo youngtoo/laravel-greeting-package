@@ -3,6 +3,7 @@
 namespace Iantoo\GreetingPackage;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 
 class Greeting
 {
@@ -17,13 +18,13 @@ class Greeting
         // Check hours
         // Get up the custom greeting messages
         if($hour >= 5 && $hour < 12){
-            $greeting = 'Good Morning';
+            $greeting = Config::get('greeting.morning');
         }
         elseif ($hour >= 12 && $hour < 18){
-            $greeting = 'Good Afternoon';
+            $greeting = Config::get('greeting.afternoon');
         } 
         else{
-            $greeting = 'Hello';
+            $greeting = Config::get('greeting.evening');
         }
 
         // Check authentication to retrieve the username
@@ -33,6 +34,6 @@ class Greeting
             return $greeting. ', ' . $name;
         }
         
-        return $greeting. ', there!';
+        return $greeting. ', '. Config::get('greeting.guest');
     }
 }

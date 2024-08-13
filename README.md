@@ -20,7 +20,19 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 
 ## Installation
 
-Inclide the package in your laravel project, publish the configuration and start personalized greetings in minutes
+Include the package in your laravel project, publish the configuration and start personalized greetings in minutes
+
+
+
+### Publish the configuration file
+
+To publish the configuration file:
+`php artisan vendor:publish --tag=config`
 
 Todo: Include the composer install command.
 
+### Run the command
+
+To run the command, use
+
+`php artisan greet:user`
