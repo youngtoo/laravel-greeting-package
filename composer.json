@@ -3,6 +3,9 @@
     "description": "The Laravel Greeting package is a lightweight, customizable package that provided personalized greeting messages based on the time of the day.",
     "type": "library",
     "license": "MIT",
+    "keywords":[
+        "iantoo"
+    ],
     "autoload": {
         "psr-4": {
             "Iantoo\\GreetingPackage\\": "src/"
@@ -10,11 +13,14 @@
     },
     "authors": [
         {
-            "name": "Ian Too",
-            "email": "ianktoo@gmail.com"
+            "name"      :"Ian Too",
+            "email"     :"ianktoo@gmail.com",
+            "homepage"  :"https://iantoo.co.ke/",
+            "role"      :"Developer"
         }
     ],
-    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "require": {},
     "extra": {
         "laravel": {
