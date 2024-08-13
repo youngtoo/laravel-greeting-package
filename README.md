@@ -21,12 +21,13 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 ## Installation
 
 1. **Install the Package:**
+
    - Add the package to your Laravel project using Composer:
 
      ```bash
      composer require iantoo/greeting-package
      ```
-     
+
 
    - If you are developing the package locally, include it in your `composer.json` file under the `repositories` section:
 
@@ -52,6 +53,7 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 ## Configuration
 
 1. **Publish Configuration (Optional):**
+
    - Publish the package's configuration file to your application's `config` directory:
 
      ```bash
@@ -60,6 +62,7 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 
 
 2. **Publish Language Files (Optional):**
+
    - Publish the package's language files to your application's `resources/lang` directory:
 
      ```bash
@@ -68,6 +71,7 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 
 
 3. **Set the Application Locale (Optional):**
+
    - To use Kiswahili for greetings, set the application's locale to `sw` in your `.env` file or `config/app.php`:
 
      ```php
@@ -78,6 +82,7 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 ## Usage
 
 1. **Display a Greeting in a View:**
+
    - Use the `Greeting::greet()` method to display a greeting message in any Blade view:
      
      ```blade
@@ -86,6 +91,7 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 
 
 2. **Test the Greeting via Artisan Command:**
+
    - Run the custom Artisan command to test the greeting output:
      ```bash
      php artisan greet:user
@@ -129,9 +135,11 @@ class DashboardController extends Controller
 ## Advanced Usage
 
 1. **Customizing Greetings:**
+
    - Modify the published configuration or language files to customize the greeting messages.
 
 2. **Adding More Languages:**
+
    - Add new language files in the `resources/lang` directory under the appropriate locale code to support additional languages.
 
 ## Deployment
