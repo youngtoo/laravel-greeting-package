@@ -20,23 +20,99 @@ The Laravel Greeting package is a lightweight, customizable package that provide
 
 ## Installation
 
-Include the package in your laravel project, publish the configuration and start personalized greetings in minutes
+1. **Install the Package:**
+   - Add the package to your Laravel project using Composer:
+     ```bash
+     composer require iantoo/greeting-package
+     ```
 
-Install the package using:
+   - If you are developing the package locally, include it in your `composer.json` file under the `repositories` section:
+     ```json
+     "repositories": [
+         {
+             "type": "path",
+             "url": "../path-to-your-package"
+         }
+     ],
+     "require": {
+         "iantoo/greeting-package": "*"
+     }
+     ```
+   - Then run:
+     ```bash
+     composer update
+     ```
 
-`composer require  iantoo/laravel-greeting-package:dev-main`
+## Configuration
 
+1. **Publish Configuration (Optional):**
+   - Publish the package's configuration file to your application's `config` directory:
+     ```bash
+     php artisan vendor:publish --tag=config
+     ```
 
-### Publish the configuration file
+2. **Publish Language Files (Optional):**
+   - Publish the package's language files to your application's `resources/lang` directory:
+     ```bash
+     php artisan vendor:publish --tag=lang
+     ```
 
-To publish the configuration file:
+3. **Set the Application Locale (Optional):**
+   - To use Kiswahili for greetings, set the application's locale to `sw` in your `.env` file or `config/app.php`:
+     ```php
+     'locale' => 'sw',
+     ```
 
-`php artisan vendor:publish --tag=config`
+## Usage
 
-Todo: Include the composer install command.
+1. **Display a Greeting in a View:**
+   - Use the `Greeting::greet()` method to display a greeting message in any Blade view:
+     ```blade
+     {{ \Iantoo\GreetingPackage\Greeting::greet() }}
+     ```
 
-### Run the command
+2. **Test the Greeting via Artisan Command:**
+   - Run the custom Artisan command to test the greeting output:
+     ```bash
+     php artisan greet:user
+     ```
+   - This command will output a greeting message in the console based on the current time and the logged-in user's status.
 
-To run the command, use
+## Example Usage
 
-`php artisan greet:user`
+### In a Controller:
+
+```php
+namespace App\Http\Controllers;
+
+use Iantoo\GreetingPackage\Greeting;
+
+class DashboardController extends Controller
+{
+    public function index()
+    {
+        $greeting = Greeting::greet();
+
+        return view('dashboard', compact('greeting'));
+    }
+}
+```
+
+### In a Blade View:
+
+```blade
+<!-- resources/views/dashboard.blade.php -->
+<h1>{{ $greeting }}</h1>
+```
+
+## Advanced Usage
+
+1. **Customizing Greetings:**
+   - Modify the published configuration or language files to customize the greeting messages.
+
+2. **Adding More Languages:**
+   - Add new language files in the `resources/lang` directory under the appropriate locale code to support additional languages.
+
+## Deployment
+
+- Deploy your Laravel application as usual. The package will automatically generate the appropriate greeting messages based on the user's language preference and time of day.
