@@ -31,7 +31,7 @@ class GreetingServiceProvider extends ServiceProvider
 
         // Publish the language file
         $this->publishes([
-            __DIR__.'/../resources/lang' => resources_path('lang/vendor/greeting-package')
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/greeting-package')
         ]);
 
         // Load translations
