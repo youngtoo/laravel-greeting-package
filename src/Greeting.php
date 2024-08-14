@@ -45,7 +45,7 @@ class Greeting
         $year = $now->format('Y');
         $day = $now->format('j');
 
-        return $dayOfWeek . ', ' . $month . $day . ', ' . $year;
+        return $dayOfWeek . ', ' . $month . ' ' . $day . ', ' . $year;
 
     }
 }
