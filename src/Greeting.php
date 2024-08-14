@@ -4,6 +4,8 @@ namespace Iantoo\GreetingPackage;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Lang;
+
 use Carbon\Carbon;
 
 class Greeting
@@ -19,13 +21,13 @@ class Greeting
         // Check hours
         // Get up the custom greeting messages
         if($hour >= 5 && $hour < 12){
-            $greeting = Config::get('greeting.morning');
+            $greeting = Lang::get('greeting-package::greeting.morning');
         }
         elseif ($hour >= 12 && $hour < 18){
-            $greeting = Config::get('greeting.afternoon');
+            $greeting = Lang::get('greeting-package::greeting.afternoon');
         } 
         else{
-            $greeting = Config::get('greeting.evening');
+            $greeting = Lang::get('greeting-package::greeting.evening');
         }
 
         // Check authentication to retrieve the username
@@ -35,7 +37,7 @@ class Greeting
             return $greeting. ', ' . $name;
         }
         
-        return $greeting. ', '. Config::get('greeting.guest');
+        return $greeting. ', '. Lang::get('greeting-package::greeting.guest');;
     }
 
     public static function currentDate(){

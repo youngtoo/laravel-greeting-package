@@ -29,6 +29,14 @@ class GreetingServiceProvider extends ServiceProvider
             __DIR__ . '/../config/greeting.php' => config_path('greeting.php'),
         ], 'config');
 
+        // Publish the language file
+        $this->publishes([
+            __DIR__.'/../resources/lang' => resources_path('lang/vendor/greeting-package')
+        ]);
+
+        // Load translations
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'greeting-package');
+
         // Register the command
         if($this->app->runningInConsole()){
             $this->commands([
