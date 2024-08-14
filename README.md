@@ -98,7 +98,7 @@ The Laravel Greeting package is a lightweight, customizable package that provide
      ```
    - This command will output a greeting message in the console based on the current time and the logged-in user's status.
 
-## Example Usage
+## Example Usage: Greetings
 
 ### In a Controller:
 
@@ -130,6 +130,116 @@ class DashboardController extends Controller
 <h1>{{ $greeting }}</h1>
 ```
 
+---
+
+## Example Usage: Current Date
+
+To display the current date using the `currentDate()` method from the Laravel Greeting Package, follow these steps:
+
+### Usage Example
+
+#### 1. **Using in a Blade View**
+
+If you want to display the current date in a Blade view, you can call the `currentDate()` method directly in the view.
+
+```blade
+<!-- resources/views/welcome.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to Our Application</h1>
+    <p>Today is {{ \Iantoo\GreetingPackage\Greeting::currentDate() }}</p>
+</body>
+</html>
+```
+
+**Output:**
+```
+Today is Monday, January 1, 2024
+```
+
+#### 2. **Using in a Controller**
+
+You can also use the `currentDate()` method within a controller and pass the result to your view.
+
+```php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Iantoo\GreetingPackage\Greeting;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        $currentDate = Greeting::currentDate();
+
+        return view('home', compact('currentDate'));
+    }
+}
+```
+
+And in your Blade view:
+
+```blade
+<!-- resources/views/home.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to Our Application</h1>
+    <p>Today is {{ $currentDate }}</p>
+</body>
+</html>
+```
+
+#### 3. **Using in an Artisan Command**
+
+If you need to use the `currentDate()` method in a custom Artisan command, it can be easily integrated.
+
+```php
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Iantoo\GreetingPackage\Greeting;
+
+class ShowCurrentDate extends Command
+{
+    protected $signature = 'date:show';
+    protected $description = 'Display the current date';
+
+    public function handle()
+    {
+        $this->info('Today is ' . Greeting::currentDate());
+    }
+}
+```
+
+To run the command:
+
+```bash
+php artisan date:show
+```
+
+**Output:**
+```
+Today is Monday, January 1, 2024
+```
+
+### Conclusion
+
+By using the `currentDate()` method in your Blade views, controllers, or custom Artisan commands, you can easily display the current date in a formatted manner (including the day of the week, month, day in numbers, and year) within your Laravel application. This method is flexible and can be used wherever you need to display the date.
+
+---
 
 
 ## Advanced Usage
