@@ -4,6 +4,7 @@ namespace Iantoo\GreetingPackage;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
+use Carbon\Carbon;
 
 class Greeting
 {
@@ -35,5 +36,16 @@ class Greeting
         }
         
         return $greeting. ', '. Config::get('greeting.guest');
+    }
+
+    public static function currentDate(){
+        $now = Carbon::now();
+        $dayOfWeek = $now->format('l');
+        $month = $now->format('F');
+        $year = $now->format('Y');
+        $day = $now->format('j');
+
+        return $dayOfWeek . ', ' . $month . $day . ', ' . $year;
+
     }
 }

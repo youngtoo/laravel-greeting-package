@@ -4,6 +4,7 @@ namespace Iantoo\GreetingPackage;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\App;
 use Iantoo\GreetingPackage\Console\Commands\GreetUser;
+use Iantoo\GreetingPackage\Console\Commands\PrintCurrentDate;
 
 class GreetingServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,7 @@ class GreetingServiceProvider extends ServiceProvider
         if($this->app->runningInConsole()){
             $this->commands([
                 GreetUser::class,
+                PrintCurrentDate::class,
             ]);
         }
     }

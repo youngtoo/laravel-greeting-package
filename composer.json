@@ -21,7 +21,10 @@
     ],
     "prefer-stable": true,
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "illuminate/support": "^11.20",
+        "illuminate/console": "^11.20"
+    },
     "extra": {
         "laravel": {
             "providers": [
